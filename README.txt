@@ -1,1 +1,1 @@
-matersky ucet pro metamodelar a notacni plugin
+matersky ucet pro metamodelar a notacni pluginy
