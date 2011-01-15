@@ -1,0 +1,1 @@
+metamodelar slouzi k tvoreni grafickych notaci
