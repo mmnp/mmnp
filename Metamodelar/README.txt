@@ -1,1 +1,1 @@
-metamodelar slouzi k tvareni grafickych notaci a poskytuje vykreslovaci sluzby notacnim pluginum
+Metamodeláø slouží k vytváøení grafických notací a poskytuje vykreslovací služby notaèním pluginùm.
