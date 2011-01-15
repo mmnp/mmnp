@@ -1,1 +1,1 @@
-branch z mmnp/mmnp
+matersky projekt metamodelare a notacniho pluginu 
