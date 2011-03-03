@@ -1,1 +1,1 @@
-Mateøskı úèet pro projekty Metamodeláø a Notaèní plugin.
+Matersky ucet pro projekty Metamodelar a notacni plugin.
