@@ -1,5 +1,0 @@
-C:\Program Files\NetBeans 6.9.1\platform=1286990570396
-D:\skola\stm\6.semestr\Bakalarska prace\Metamodelar\mmnp\Metamodelar\src\Metamodelar\build\cluster=1297871603361
-C:\Program Files\NetBeans 6.9.1\platform=1286990570396
-D:\skola\stm\6.semestr\Bakalarska prace\Metamodelar\mmnp\Metamodelar\src\Metamodelar\build\testuserdir=1297871603361
-crc=7
