@@ -7,13 +7,25 @@ package org.cvut.vrchlpet.Metamodelar.core;
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public class StructuralFuture extends Classifier{
+public class StructuralFuture extends Classifier {
+
+    public static final boolean DEFAULT_EDITABLE = true;
+    public static final boolean DEFAULT_REQUIRED = false;
+    public static final boolean DEFAULT_UNIQUE = false;
+    public static final boolean DEFAULT_SPECIFIC = false;
+
+
     private boolean editable;
     private boolean required;
     private boolean unique;
-    private boolean serializable = true;
+    private boolean specific;
 
-    public StructuralFuture() {}
+    public StructuralFuture() {
+        this.editable = DEFAULT_EDITABLE;
+        this.required = DEFAULT_REQUIRED;
+        this.unique = DEFAULT_UNIQUE;
+        this.specific = DEFAULT_SPECIFIC;
+    }
 
     /**
      * @return the editable
@@ -64,19 +76,19 @@ public class StructuralFuture extends Classifier{
     }
 
     /**
-     * @return the serializable
+     * @return the specific
      */
-    public boolean isSerializable() {
-        return serializable;
+    public boolean isSpecific() {
+        return specific;
     }
 
     /**
-     * @param serializable the serializable to set
+     * @param specific the specific to set
      */
-    public void setSerializable(boolean serializable) {
-        boolean old = this.serializable;
-        this.serializable = serializable;
-        firePropertyChange("serializable", old, this.serializable);
+    public void setSpecific(boolean specific) {
+        boolean old = this.specific;
+        this.specific = specific;
+        firePropertyChange("specific", old, this.specific);
     }
 
 

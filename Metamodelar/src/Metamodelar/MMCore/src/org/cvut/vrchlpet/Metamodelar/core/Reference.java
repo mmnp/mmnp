@@ -14,6 +14,7 @@ public class Reference extends MetaObject{
     public static final int DEFAULT_UPPER_BOUND = -1;
     public static final boolean DEFAULT_CONTAINER = false;
     public static final boolean DEFAULT_CONTAINMENT = false;
+    public static final boolean DEFAULT_VISIBLE = true;
 
     private Element referenceType;
     private Reference opposite;
@@ -21,14 +22,26 @@ public class Reference extends MetaObject{
     private int upperBound;
     private boolean container;
     private boolean containment;
+    private boolean visible;
+    private Element owner;
 
-    public Reference(Element refType) {
+
+    public Reference() {
+        this.referenceType = null;
+        this.owner = null;
+        this.opposite = null;
+        this.lowerBound = DEFAULT_LOWER_BOUND;
+        this.upperBound = DEFAULT_UPPER_BOUND;
+        this.container = DEFAULT_CONTAINER;
+        this.containment = DEFAULT_CONTAINMENT;
+        this.visible = DEFAULT_VISIBLE;
+
+    }
+
+    public Reference(Element refType, Element owner) {
+        this();
         this.referenceType = refType;
-        opposite = null;
-        lowerBound = DEFAULT_LOWER_BOUND;
-        upperBound = DEFAULT_UPPER_BOUND;
-        container = DEFAULT_CONTAINER;
-        containment = DEFAULT_CONTAINMENT;
+        this.owner = owner;
     }
 
     /**
@@ -123,6 +136,34 @@ public class Reference extends MetaObject{
         boolean old = this.containment;
         this.containment = containment;
         firePropertyChange("containment", old, this.containment);
+    }
+
+    /**
+     * @return the owner
+     */
+    public Element getOwner() {
+        return owner;
+    }
+
+    /**
+     * @param owner the owner to set
+     */
+    public void setOwner(Element owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * @return the visible
+     */
+    public boolean isVisible() {
+        return visible;
+    }
+
+    /**
+     * @param visible the visible to set
+     */
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
 

@@ -3,6 +3,7 @@
 package org.cvut.vrchlpet.Metamodelar.core;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -18,13 +19,11 @@ public class Element extends MetaObject{
     private int upperBound;
 
     private ArrayList<Reference> references;
-    private ArrayList<Reference> remoteReferences;
 
     public Element() {
         this.lowerBound = DEFAULT_LOWER_BOUND;
         this.upperBound = DEFAULT_UPPER_BOUND;
         this.references = new ArrayList<Reference>();
-        this.remoteReferences = new ArrayList<Reference>();
     }
 
 
@@ -42,18 +41,14 @@ public class Element extends MetaObject{
         return this.references;
     }
 
-    public void addRemoteReference(Reference ref) {
-        this.getRemoteReferences().add(ref);
-        firePropertyChange("remoteReferences", ref, this.getRemoteReferences());
-    }
+    public List<Reference> getVisibleReferences() {
+        ArrayList<Reference> visibleRef = new ArrayList<Reference>();
+        for ( Reference ref : references) {
+            if ( ref.isVisible())
+                visibleRef.add(ref);
+        }
 
-    public void removeRemoteReference(Reference ref) {
-        this.getRemoteReferences().remove(ref);
-        firePropertyChange("remoteReferences", ref, this.getRemoteReferences());
-    }
-
-    public ArrayList<Reference> getRemoteReferences() {
-        return this.remoteReferences;
+        return visibleRef;
     }
 
     /**
