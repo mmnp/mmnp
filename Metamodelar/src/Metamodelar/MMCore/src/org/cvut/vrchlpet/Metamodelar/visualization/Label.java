@@ -10,8 +10,8 @@ public class Label {
 
 
     public static final boolean DEFAULT_MOVABLE = false;
-    public static final boolean DEFAULT_EDITABLE = false;
-    public static final String DEFAULT_TEXT = "";
+    public static final boolean DEFAULT_EDITABLE = true;
+    public static final String DEFAULT_TEXT = "default label text";
 
     private boolean movable;
     private boolean editable;

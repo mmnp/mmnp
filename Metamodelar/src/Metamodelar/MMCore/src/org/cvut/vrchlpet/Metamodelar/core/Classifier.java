@@ -5,6 +5,7 @@ package org.cvut.vrchlpet.Metamodelar.core;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,14 +18,14 @@ public class Classifier implements IPropertyChangeObserver{
     protected String description;
 
     public static final String DEFAULT_NAMESPACE = "empty namespace";
-    public static final String DEfAULT_DESCRIPTION = "empty description";
+    public static final String DEFAULT_DESCRIPTION = "empty description";
 
     protected ArrayList<PropertyChangeListener> propertyChangeListeners;
 
     public Classifier() {
-        propertyChangeListeners = new ArrayList<PropertyChangeListener>();
+        this.propertyChangeListeners = new ArrayList<PropertyChangeListener>();
         this.nameSpace = DEFAULT_NAMESPACE;
-        this.description = DEfAULT_DESCRIPTION;
+        this.description = DEFAULT_DESCRIPTION;
     }
 
     public Classifier(String namseSpace, String description) {
@@ -33,6 +34,9 @@ public class Classifier implements IPropertyChangeObserver{
         this.description = description;
     }
 
+    protected List<PropertyChangeListener> getListeners() {
+        return this.propertyChangeListeners;
+    }
 
     @Override
     public void addPropertyChangeListener(PropertyChangeListener pcl) {

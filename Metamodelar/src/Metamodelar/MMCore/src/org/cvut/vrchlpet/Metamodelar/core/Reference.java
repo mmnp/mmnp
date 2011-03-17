@@ -166,5 +166,20 @@ public class Reference extends MetaObject{
         this.visible = visible;
     }
 
+    /**
+     * reference se odebere jak z ciloveho tak ze zdrojoveho elementu
+     * a vynuluje reference
+     */
+    public void nullify() {
+        this.getOpposite().getOwner().removeReference(this.getOpposite());
+        this.getOpposite().setOwner(null);
+        this.getOpposite().setReferenceType(null);
+        this.getOwner().removeReference(this);
+        this.setOwner(null);
+        this.setReferenceType(null);
+        firePropertyChange("nullify", this, this);
+    }
+
+
 
 }

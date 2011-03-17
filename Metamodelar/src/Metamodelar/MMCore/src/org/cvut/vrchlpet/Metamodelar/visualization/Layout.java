@@ -7,8 +7,11 @@ package org.cvut.vrchlpet.Metamodelar.visualization;
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public enum ShapeLabelPosition {
+public enum Layout {
     top,
     buttom,
-    center;
+    center,
+    right,
+    left,
+    flow;
 }

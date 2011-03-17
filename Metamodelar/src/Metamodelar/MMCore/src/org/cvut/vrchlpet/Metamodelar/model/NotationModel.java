@@ -3,6 +3,8 @@
 package org.cvut.vrchlpet.Metamodelar.model;
 
 import java.util.ArrayList;
+import java.util.List;
+import org.cvut.vrchlpet.Metamodelar.core.Element;
 import org.cvut.vrchlpet.Metamodelar.core.Notation;
 
 /**
@@ -10,27 +12,46 @@ import org.cvut.vrchlpet.Metamodelar.core.Notation;
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public class NotationModel extends Notation{
+public class NotationModel {
 
     private Project project;
     private ArrayList<Author> authors;
-    private ModelManager modelManager;
     private Notation metamodel;
+    private ArrayList<ModelElement> elements;
 
 
     public NotationModel() {
         this.project = null;
-        this.modelManager = null;
         this.authors = new ArrayList<Author>();
         this.metamodel = null;
+        this.elements = new ArrayList<ModelElement>();
+
     }
 
     public NotationModel(Project project, Notation metamodel) {
         this();
         this.project = project;
-        this.modelManager = new ModelManager(this);
         this.metamodel = metamodel;
     }
+
+
+    public List<Element> getAvailableElements() {
+        throw new UnsupportedOperationException("not supported yet");
+    }
+
+    public ModelElement createElement(Element element) {
+        throw new UnsupportedOperationException("not supported yet");
+    }
+
+    public boolean removeElement(ModelElement element) {
+        throw new UnsupportedOperationException("not supported yet");
+    }
+
+    public List<ModelElement> getElements() {
+        return this.elements;
+    }
+
+
 
     /**
      * @return the project
@@ -59,13 +80,6 @@ public class NotationModel extends Notation{
 
     public void removeAuthor(Author author) {
         this.authors.remove(author);
-    }
-
-    /**
-     * @return the modelManager
-     */
-    public ModelManager getModelManager() {
-        return modelManager;
     }
 
     /**
