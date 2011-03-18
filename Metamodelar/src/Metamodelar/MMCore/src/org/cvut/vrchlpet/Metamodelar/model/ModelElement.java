@@ -8,7 +8,7 @@ package org.cvut.vrchlpet.Metamodelar.model;
 import java.util.ArrayList;
 import java.util.List;
 import org.cvut.vrchlpet.Metamodelar.core.Element;
-import org.cvut.vrchlpet.Metamodelar.core.MetaObject;
+import org.cvut.vrchlpet.Metamodelar.core.MetaObject2;
 import org.cvut.vrchlpet.Metamodelar.core.Reference;
 import org.cvut.vrchlpet.Metamodelar.visualization.Position;
 
@@ -69,7 +69,7 @@ public class ModelElement extends ModelObject {
 
 
     @Override
-    public MetaObject getMetaObject() {
+    public MetaObject2 getMetaObject() {
         return this.metaElement;
     }
 

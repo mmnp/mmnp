@@ -7,7 +7,7 @@ package org.cvut.vrchlpet.Metamodelar.core;
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public class Reference extends MetaObject{
+public abstract class Reference extends MetaObject{
 
 
     public static final int DEFAULT_LOWER_BOUND = 0;
@@ -16,62 +16,25 @@ public class Reference extends MetaObject{
     public static final boolean DEFAULT_CONTAINMENT = false;
     public static final boolean DEFAULT_VISIBLE = true;
 
-    private Element referenceType;
-    private Reference opposite;
+
     private int lowerBound;
     private int upperBound;
     private boolean container;
     private boolean containment;
     private boolean visible;
-    private Element owner;
+    private ReferenceableObject owner;
 
+    public abstract Reference getOpposite();
+    public abstract ReferenceableObject getReferenceType();
 
     public Reference() {
-        this.referenceType = null;
         this.owner = null;
-        this.opposite = null;
         this.lowerBound = DEFAULT_LOWER_BOUND;
         this.upperBound = DEFAULT_UPPER_BOUND;
         this.container = DEFAULT_CONTAINER;
         this.containment = DEFAULT_CONTAINMENT;
         this.visible = DEFAULT_VISIBLE;
 
-    }
-
-    public Reference(Element refType, Element owner) {
-        this();
-        this.referenceType = refType;
-        this.owner = owner;
-    }
-
-    /**
-     * @return the referenceType
-     */
-    public Element getReferenceType() {
-        return referenceType;
-    }
-
-    /**
-     * @param referenceType the referenceType to set
-     */
-    public void setReferenceType(Element referenceType) {
-        this.referenceType = referenceType;
-        firePropertyChange("referenceType", null, this.referenceType);
-    }
-
-    /**
-     * @return the opposite
-     */
-    public Reference getOpposite() {
-        return opposite;
-    }
-
-    /**
-     * @param opposite the opposite to set
-     */
-    public void setOpposite(Reference opposite) {
-        this.opposite = opposite;
-        firePropertyChange("opposite", null, this.opposite);
     }
 
     /**
@@ -139,20 +102,6 @@ public class Reference extends MetaObject{
     }
 
     /**
-     * @return the owner
-     */
-    public Element getOwner() {
-        return owner;
-    }
-
-    /**
-     * @param owner the owner to set
-     */
-    public void setOwner(Element owner) {
-        this.owner = owner;
-    }
-
-    /**
      * @return the visible
      */
     public boolean isVisible() {
@@ -167,19 +116,18 @@ public class Reference extends MetaObject{
     }
 
     /**
-     * reference se odebere jak z ciloveho tak ze zdrojoveho elementu
-     * a vynuluje reference
+     * @return the owner
      */
-    public void nullify() {
-        this.getOpposite().getOwner().removeReference(this.getOpposite());
-        this.getOpposite().setOwner(null);
-        this.getOpposite().setReferenceType(null);
-        this.getOwner().removeReference(this);
-        this.setOwner(null);
-        this.setReferenceType(null);
-        firePropertyChange("nullify", this, this);
+    public ReferenceableObject getOwner() {
+        return owner;
     }
 
-
+    /**
+     * @param owner the owner to set
+     */
+    public void setOwner(ReferenceableObject owner) {
+        this.owner = owner;
+    }
+    
 
 }

@@ -2,7 +2,7 @@
 
 package org.cvut.vrchlpet.Metamodelar.model;
 
-import org.cvut.vrchlpet.Metamodelar.core.MetaObject;
+import org.cvut.vrchlpet.Metamodelar.core.MetaObject2;
 import org.cvut.vrchlpet.Metamodelar.core.Reference;
 
 /**
@@ -27,7 +27,7 @@ public class ModelReference extends ModelObject{
     }
 
     @Override
-    public MetaObject getMetaObject() {
+    public MetaObject2 getMetaObject() {
         return this.metaReference;
     }
 

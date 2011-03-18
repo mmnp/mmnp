@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package org.cvut.vrchlpet.Metamodelar.core;
 
@@ -15,15 +12,15 @@ import org.cvut.vrchlpet.Metamodelar.datacore.MData;
  */
 public class Attribute extends StructuralFuture{
 
-    public static final boolean DEFAULT_SPECIFIC = false;
+    public static final String DEFAULT_NAME = "attribute Name";
 
     private ArrayList<Property> properties;
-    private boolean specific;
+    private String name;
 
 
     public Attribute() {
         this.properties = new ArrayList<Property>();
-        this.specific = DEFAULT_SPECIFIC;
+        this.name = DEFAULT_NAME;
     }
 
     public Property createProperty(MData data) {
@@ -45,17 +42,17 @@ public class Attribute extends StructuralFuture{
     /**
      * @return the specific
      */
-    public boolean isSpecific() {
-        return specific;
+    public String getName() {
+        return name;
     }
 
     /**
      * @param specific the specific to set
      */
-    public void setSpecific(boolean specific) {
-        boolean old = this.specific;
-        this.specific = specific;
-        firePropertyChange("specific", old, this.specific);
+    public void setName(String name) {
+        String old = this.name;
+        this.name = name;
+        firePropertyChange("name", old, this.name);
     }
 
 }

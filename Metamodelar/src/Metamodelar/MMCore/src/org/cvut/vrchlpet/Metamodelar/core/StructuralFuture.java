@@ -7,22 +7,22 @@ package org.cvut.vrchlpet.Metamodelar.core;
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public class StructuralFuture extends Classifier {
+public class StructuralFuture extends MetaObject {
 
     public static final boolean DEFAULT_EDITABLE = true;
-    public static final boolean DEFAULT_REQUIRED = true;
-    public static final boolean DEFAULT_UNIQUE = true;
+    public static final int DEFAULT_LOWER_BOUND = 1;
+    public static final int DEFAULT_UPPER_BOUND = 1;
 
 
     private boolean editable;
-    private boolean required;
-    private boolean unique;
+    private int lowerBound;
+    private int upperBound;
     
 
     public StructuralFuture() {
         this.editable = DEFAULT_EDITABLE;
-        this.required = DEFAULT_REQUIRED;
-        this.unique = DEFAULT_UNIQUE;
+        this.lowerBound = DEFAULT_LOWER_BOUND;
+        this.upperBound = DEFAULT_UPPER_BOUND;
     }
 
     /**
@@ -44,33 +44,33 @@ public class StructuralFuture extends Classifier {
     /**
      * @return the required
      */
-    public boolean isRequired() {
-        return required;
+    public int getLowerBound() {
+        return this.lowerBound;
     }
 
     /**
      * @param required the required to set
      */
-    public void setRequired(boolean required) {
-        boolean old = this.required;
-        this.required = required;
-        firePropertyChange("required", old, this.required);
+    public void setLowerBound(int lowerBound) {
+        int old = this.lowerBound;
+        this.lowerBound = lowerBound;
+        firePropertyChange("lowerBound", old, this.lowerBound);
     }
 
     /**
      * @return the unique
      */
-    public boolean isUnique() {
-        return unique;
+    public int getUpperBound() {
+        return this.upperBound;
     }
 
     /**
      * @param unique the unique to set
      */
-    public void setUnique(boolean unique) {
-        boolean old = this.unique;
-        this.unique = unique;
-        firePropertyChange("unique", old, this.unique);
+    public void setUpperBound(int upperBound) {
+        int old = this.upperBound;
+        this.upperBound = upperBound;
+        firePropertyChange("upperBound", old, this.upperBound);
     }
 
     

@@ -26,7 +26,6 @@ public class Property extends StructuralFuture{
         this.defaultValue = null;
         setDescription(DEfAULT_PROPERTY_DESCRIPTION);
         setNameSpace(DEFAULT_PROPERTY_NAMESPACE);
-        setUnique(DEFAULT_UNIQUE);
     }
 
     public Property(MData mData) {

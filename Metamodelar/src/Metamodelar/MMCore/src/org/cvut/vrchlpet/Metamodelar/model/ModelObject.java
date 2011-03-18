@@ -5,7 +5,7 @@ package org.cvut.vrchlpet.Metamodelar.model;
 import java.util.ArrayList;
 import java.util.List;
 import org.cvut.vrchlpet.Metamodelar.core.Attribute;
-import org.cvut.vrchlpet.Metamodelar.core.MetaObject;
+import org.cvut.vrchlpet.Metamodelar.core.MetaObject2;
 
 /**
  *
@@ -19,7 +19,7 @@ public abstract class ModelObject {
 
 
 
-    public abstract MetaObject getMetaObject();
+    public abstract MetaObject2 getMetaObject();
 
 
     public ModelObject() {
