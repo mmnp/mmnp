@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: org.cvut.vrchlpet.MEditor
+OpenIDE-Module-Layer: org/cvut/vrchlpet/MEditor/layer.xml
+OpenIDE-Module-Localizing-Bundle: org/cvut/vrchlpet/MEditor/Bundle.properties
+OpenIDE-Module-Requires: org.openide.windows.WindowManager
+OpenIDE-Module-Specification-Version: 1.0
+

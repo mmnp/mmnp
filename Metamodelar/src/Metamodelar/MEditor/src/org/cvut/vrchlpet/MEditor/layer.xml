@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Window">
+            <file name="org-cvut-vrchlpet-MEditor-MEditorAction.instance">
+                <attr name="component" methodvalue="org.cvut.vrchlpet.MEditor.MEditorTopComponent.findInstance"/>
+                <attr name="displayName" bundlevalue="org.cvut.vrchlpet.MEditor.Bundle#CTL_MEditorAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Window">
+            <file name="MEditorAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/org-cvut-vrchlpet-MEditor-MEditorAction.instance"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="MEditorTopComponent.settings" url="MEditorTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="MEditorTopComponent.wstcref" url="MEditorTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+</filesystem>
