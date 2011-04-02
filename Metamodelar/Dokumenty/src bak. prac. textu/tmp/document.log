@@ -1,0 +1,97 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2011.2.15)  2 APR 2011 13:44
+entering extended mode
+**document.tex
+
+("D:\skola\stm\6.semestr\Bakalarska prace\Metamodelar\mmnp\Metamodelar\Dokument
+y\src bak. prac. textu\document.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\base\cp1250.def"
+File: cp1250.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.8\tex\generic\babel\babel.sty"
+Package: babel 2008/07/06 v3.8l The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.8\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.8\tex\generic\babel\czech.ldf"
+Language: czech 2008/07/06 v3.1a Czech support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.8\tex\generic\babel\babel.def"
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Czech'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@czech = a dialect from \language0
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count88
+Package babel Info: Making - an active character on input line 226.
+))
+("D:\skola\stm\6.semestr\Bakalarska prace\Metamodelar\mmnp\Metamodelar\Dokument
+y\src bak. prac. textu\document.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ [1
+
+{C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
+("D:\skola\stm\6.semestr\Bakalarska prace\Metamodelar\mmnp\Metamodelar\Dokument
+y\src bak. prac. textu\document.aux") ) 
+Here is how much of TeX's memory you used:
+ 654 strings out of 495285
+ 8452 string characters out of 3179875
+ 59270 words of memory out of 3000000
+ 3919 multiletter control sequences out of 15000+200000
+ 4850 words of font info for 18 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 24i,4n,24p,160b,121s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.8/fonts
+/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.8/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb>
+Output written on document.pdf (1 page, 25431 bytes).
+PDF statistics:
+ 14 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
