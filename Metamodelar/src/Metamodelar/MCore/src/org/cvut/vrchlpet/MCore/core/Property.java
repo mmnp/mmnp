@@ -14,9 +14,6 @@ import org.cvut.vrchlpet.MCore.datacore.MData;
  */
 public class Property extends StructuralFuture{
 
-    public static final String DEfAULT_PROPERTY_DESCRIPTION = "Common property";
-    public static final String DEFAULT_PROPERTY_NAMESPACE = "property";
-
     private MData mData;
     private Object defaultValue;
 
@@ -24,8 +21,6 @@ public class Property extends StructuralFuture{
     public Property() {
         this.mData = null;
         this.defaultValue = null;
-        setDescription(DEfAULT_PROPERTY_DESCRIPTION);
-        setNameSpace(DEFAULT_PROPERTY_NAMESPACE);
     }
 
     public Property(MData mData) {
@@ -53,7 +48,7 @@ public class Property extends StructuralFuture{
     /**
      * @return the defaultValue
      */
-    public Object getDefaultValue() {
+    public Object getDefaultVaue() {
         return defaultValue;
     }
 
@@ -62,8 +57,8 @@ public class Property extends StructuralFuture{
      */
     public void setDefaultValue(Object defaultValue) {
         if ( !this.mData.getClass().isInstance(defaultValue))
-            return;
-
+            throw new IllegalArgumentException(defaultValue + ": cannot be "
+                    + "assigned to this property. Incompatible types!");
         Object old = this.defaultValue;
         this.defaultValue = defaultValue;
         firePropertyChange("defaultValue", old, this.defaultValue);

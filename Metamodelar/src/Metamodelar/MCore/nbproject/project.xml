@@ -15,7 +15,14 @@
                     </test-dependency>
                 </test-type>
             </test-dependencies>
-            <public-packages/>
+            <public-packages>
+                <package>org.cvut.vrchlpet.MCore.core</package>
+                <package>org.cvut.vrchlpet.MCore.datacore</package>
+                <package>org.cvut.vrchlpet.MCore.model</package>
+                <package>org.cvut.vrchlpet.MCore.util</package>
+                <package>org.cvut.vrchlpet.MCore.visualization</package>
+                <package>org.cvut.vrchlpet.MCore.visualization.ui</package>
+            </public-packages>
         </data>
     </configuration>
 </project>

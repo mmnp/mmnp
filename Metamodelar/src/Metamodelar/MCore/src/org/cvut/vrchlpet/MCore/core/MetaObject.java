@@ -2,17 +2,21 @@
 
 package org.cvut.vrchlpet.MCore.core;
 
-import java.beans.PropertyChangeEvent;
+
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.event.EventListenerList;
+import org.cvut.vrchlpet.MCore.util.Notifyer;
+import org.cvut.vrchlpet.MCore.visualization.ui.CommonMetaObjectUI;
+import org.cvut.vrchlpet.MCore.visualization.ui.IMetaObjectUI;
 
 /**
  *
  * @author Vrchlavsky Petr
  * @version 1.0
  */
-public class MetaObject implements IPropertyChangeObservable{
+public class MetaObject extends Notifyer{
 
     protected String nameSpace;
     protected String description;
@@ -20,10 +24,9 @@ public class MetaObject implements IPropertyChangeObservable{
     public static final String DEFAULT_NAMESPACE = "empty namespace";
     public static final String DEFAULT_DESCRIPTION = "empty description";
 
-    protected ArrayList<PropertyChangeListener> propertyChangeListeners;
+    protected CommonMetaObjectUI ui;
 
     public MetaObject() {
-        this.propertyChangeListeners = new ArrayList<PropertyChangeListener>();
         this.nameSpace = DEFAULT_NAMESPACE;
         this.description = DEFAULT_DESCRIPTION;
     }
@@ -34,31 +37,7 @@ public class MetaObject implements IPropertyChangeObservable{
         this.description = description;
     }
 
-    protected List<PropertyChangeListener> getListeners() {
-        return this.propertyChangeListeners;
-    }
-
-    @Override
-    public void addPropertyChangeListener(PropertyChangeListener pcl) {
-        this.propertyChangeListeners.add(pcl);
-    }
-
-    @Override
-    public void removePropertyChangeListener(PropertyChangeListener pcl) {
-        this.propertyChangeListeners.remove(pcl);
-    }
-
-    @Override
-    public void firePropertyChange(String parameterName, Object oldValue, Object newValue) {
-        if ( propertyChangeListeners.isEmpty())
-            return;
-
-        PropertyChangeEvent pce = new PropertyChangeEvent(this, parameterName, oldValue, newValue);
-
-        for ( PropertyChangeListener pcl : propertyChangeListeners) {
-            pcl.propertyChange(pce);
-        }
-    }
+    
 
     /**
      * @return the nameSpace
@@ -90,6 +69,20 @@ public class MetaObject implements IPropertyChangeObservable{
         String old = this.description;
         this.description = description;
         firePropertyChange("description", old, this.description);
+    }
+
+    /**
+     * @return the ui
+     */
+    public CommonMetaObjectUI getUi() {
+        return ui;
+    }
+
+    /**
+     * @param ui the ui to set
+     */
+    public void setUi(CommonMetaObjectUI ui) {
+        this.ui = ui;
     }
 
 }

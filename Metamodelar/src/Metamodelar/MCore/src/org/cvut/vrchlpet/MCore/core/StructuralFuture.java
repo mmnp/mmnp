@@ -2,6 +2,7 @@
 
 package org.cvut.vrchlpet.MCore.core;
 
+
 /**
  *
  * @author Vrchlavsky Petr

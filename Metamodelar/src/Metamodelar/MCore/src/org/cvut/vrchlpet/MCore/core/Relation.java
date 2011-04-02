@@ -9,29 +9,38 @@ package org.cvut.vrchlpet.MCore.core;
  */
 public class Relation extends MetaObject{
 
-    public static final boolean DEFAULT_INVERTILE = false;
+    public static final boolean DEFAULT_SYMETRIC = false;
 
-    private boolean invertible;
+    private boolean symetric;
 
 
 
     public Relation() {
-        this.invertible = DEFAULT_INVERTILE;
+        this.symetric = DEFAULT_SYMETRIC;
     }
 
 
     /**
      * @return the invertible
      */
-    public boolean isInvertible() {
-        return invertible;
+    public boolean isSymetric() {
+        return symetric;
     }
 
     /**
      * @param invertible the invertible to set
      */
-    public void setInvertible(boolean invertible) {
-        this.invertible = invertible;
+    public void setSymetric(boolean symetric) {
+        this.symetric = symetric;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+
+        s += getNameSpace() + ", symetric: " + symetric;
+
+        return s;
     }
 
 }

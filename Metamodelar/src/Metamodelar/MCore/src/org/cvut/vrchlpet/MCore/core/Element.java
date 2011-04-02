@@ -2,8 +2,15 @@
 
 package org.cvut.vrchlpet.MCore.core;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
+import org.cvut.vrchlpet.MCore.util.AttributeStateChangeListener;
+import org.cvut.vrchlpet.MCore.util.MList;
+import org.cvut.vrchlpet.MCore.visualization.ui.CommonMetaObjectUI;
+import org.cvut.vrchlpet.MCore.visualization.ui.ElementUI;
+import org.cvut.vrchlpet.MCore.visualization.ui.IMetaObjectUI;
 
 /**
  *
@@ -21,7 +28,7 @@ public class Element extends ReferenceableObject{
 
     private Element superElement;
     private ArrayList<Attribute> attributes;
-    private MetaModel model;
+    private Model model;
 
     public Element() {
         super("null");
@@ -30,37 +37,49 @@ public class Element extends ReferenceableObject{
         setNameSpace(DEFAULT_ELEMENT_NAMESPACE);
         setDescription(DEFAULT_ELEMENT_DESCRIPTION);
         this.attributes = new ArrayList<Attribute>();
+        CommonMetaObjectUI elementUI = new ElementUI(this);//instaluje se automaticky
     }
 
-    public Element(MetaModel model) {
+    public Element(Model model) {
         this();
         this.model = model;
     }
 
+    public void addAttributeStateChangedListener(AttributeStateChangeListener lst) {
+        listenerList.add(AttributeStateChangeListener.class, lst);
+    }
 
-    public Attribute createAttribute(String namespace) {
-        Attribute at = null;
+    public boolean removeAttribute(Attribute at) {
+        boolean b = attributes.remove(at);
+        if ( b)
+            if ( isNotificationEnabled()) {
+                AttributeStateChangeListener [] lst =
+                        listenerList.getListeners(AttributeStateChangeListener.class);
 
+                PropertyChangeEvent evt =
+                        new PropertyChangeEvent(this, "removeAttribute", at, attributes);
+                for ( int i = 0; i < lst.length; i++) {
+                    lst[i].attributeStateChanged(evt);
+                }
+            }
 
-        for ( Attribute a : getAttributes()) {
-            if ( a.getNameSpace().equals(namespace))
-                return null;
-        }
-
-        at = new Attribute();
-        this.addAttribute(at);
-
-        return at;
+        return b;
     }
 
     public void addAttribute(Attribute at) {
-        this.attributes.add(at);
-        firePropertyChange("attributes", at, this.attributes);
-    }
+        attributes.add(at);
 
-    public void removeAttribute(Attribute at) {
-        this.attributes.remove(at);
-        firePropertyChange("attributes", at, this.attributes);
+
+        if ( isNotificationEnabled()) {
+                AttributeStateChangeListener [] lst =
+                        listenerList.getListeners(AttributeStateChangeListener.class);
+
+                PropertyChangeEvent evt =
+                        new PropertyChangeEvent(this, "addAttribute", attributes, at);
+                for ( int i = 0; i < lst.length; i++) {
+                    lst[i].attributeStateChanged(evt);
+                }
+            }
     }
 
     public ArrayList<Attribute> getAttributes() {
@@ -105,10 +124,11 @@ public class Element extends ReferenceableObject{
     public boolean setSuperElement(Element superElement) {
 
         // kontrola, jestli nedojde k zacykleni
-        for (Element el : superElement.getAllSuperElements()) {
-            if ( el == this)
-                return false;
-        }
+        if ( superElement != null)
+            for (Element el : superElement.getAllSuperElements()) {
+                if ( el == this)
+                    return false;
+            }
 
         Element old = this.superElement;
         this.superElement = superElement;
@@ -120,17 +140,34 @@ public class Element extends ReferenceableObject{
     /**
      * @return the model
      */
-    public MetaModel getModel() {
+    public Model getModel() {
         return model;
     }
 
     /**
      * @param model the model to set
      */
-    public void setModel(MetaModel model) {
+    public void setModel(Model model) {
         this.model = model;
     }
 
 
+    @Override
+    public String toString() {
+        String s = "";
+
+        s += getNameSpace() + '\n';
+        s += "superType: " + ((superElement != null) ? superElement.getNameSpace() : "null") + '\n';
+        s += " refs:" + '\n';
+        for ( Reference ref : getReferences()) {
+            s += "   " + ref.toString() + '\n';
+        }
+        s += " atts:" + '\n';
+        for ( Attribute at : getAttributes()) {
+            s += "   " + at.toString() + '\n';
+        }
+
+        return s;
+    }
 
 }

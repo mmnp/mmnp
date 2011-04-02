@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package org.cvut.vrchlpet.MCore.visualization;
 
@@ -19,6 +16,10 @@ public class ElementVisualManager extends VisualManager<ElementVisualization, El
     public ElementVisualManager() {
         super();
     }
+
+
+    
+
 
 
     @Override

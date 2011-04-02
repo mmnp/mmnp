@@ -7,6 +7,7 @@ package org.cvut.vrchlpet.MCore.core;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.cvut.vrchlpet.MCore.util.MList;
 
 /**
  *
@@ -16,11 +17,12 @@ import java.util.List;
 public class ReferenceableObject extends MetaObject{
 
     private String id;
-    private ArrayList<Reference> references;
+    private MList<Reference> references;
 
     public ReferenceableObject(String id) {
         this.id = id;
-        this.references = new ArrayList<Reference>();
+        this.references = new MList<Reference>();
+        references.addPropertyChangeListener(this);
     }
 
 
@@ -38,7 +40,6 @@ public class ReferenceableObject extends MetaObject{
         Reference ref = new Reference(relation);
         ref.setOwner(this);
         references.add(ref);
-        firePropertyChange("references", references, ref);
         return ref;
 
     }
@@ -60,19 +61,7 @@ public class ReferenceableObject extends MetaObject{
         return false;
     }
 
-
-
-    public void addReference(Reference ref) {
-        this.getReferences().add(ref);
-        firePropertyChange("references", ref, this.getReferences());
-    }
-
-    public void removeReference(Reference ref) {
-        if ( this.getReferences().remove(ref))
-            firePropertyChange("references", ref, this.getReferences());
-    }
-
-    public ArrayList<Reference> getReferences() {
+    public MList<Reference> getReferences() {
         return this.references;
     }
 

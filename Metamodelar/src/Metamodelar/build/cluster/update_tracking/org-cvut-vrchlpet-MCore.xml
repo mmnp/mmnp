@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module codename="org.cvut.vrchlpet.MCore">
-    <module_version install_time="1300582807981" last="true" origin="installer" specification_version="1.0">
-        <file crc="3177053381" name="config/Modules/org-cvut-vrchlpet-MCore.xml"/>
-        <file crc="3229866125" name="modules/org-cvut-vrchlpet-MCore.jar"/>
-    </module_version>
-</module>
